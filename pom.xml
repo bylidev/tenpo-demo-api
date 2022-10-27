@@ -16,6 +16,8 @@
     <properties>
         <repackage.classifier/>
     </properties>
+
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>

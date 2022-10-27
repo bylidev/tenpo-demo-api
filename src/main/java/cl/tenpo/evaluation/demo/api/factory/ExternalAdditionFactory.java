@@ -27,7 +27,7 @@ public class ExternalAdditionFactory implements AdditionFactory{
     @Retryable(value = FeignException.class,maxAttempts = 3)
     public BigDecimal getAddition() {
         log.info("Calling dummy client");
-        return BigDecimal.ONE;//dummyClient.getDummyValue();
+        return dummyClient.getDummyValue();
     }
 
     @Scheduled(timeUnit = TimeUnit.MINUTES,fixedDelay = 30l)
