@@ -25,7 +25,10 @@ public class WebSecurityConfig {
             .csrf()
             .disable()
             .addFilterBefore(authPrefilter, UsernamePasswordAuthenticationFilter.class)
-            .authorizeRequests().anyRequest().authenticated()
+            .authorizeRequests().antMatchers("/swagger-ui/**").permitAll()
+            .and()
+            .authorizeRequests().antMatchers("/v3/api-docs/**").permitAll()
+            .anyRequest().authenticated()
             .and()
             .sessionManagement()
             .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
