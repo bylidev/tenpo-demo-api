@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.math.BigDecimal;
 
-@FeignClient(value = "dummyClient",url = "${dummy.client.url}")
+@FeignClient(value = "dummyClient",url = "${addition.client.url}")
 public interface DummyClient {
     @GetMapping("/dummy")
     BigDecimal getDummyValue();
